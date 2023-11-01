@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def payoff(spot, strike):
+    return -np.maximum(spot - strike, 0) # "-" --> short position
+
+spot = np.arange(0, 151, 1)  
+strike = 100  
+
+payoff = payoff(spot, strike)  
+
+plt.figure(figsize=(8, 6))
+plt.plot(spot, payoff, color="black", label="Payoff")
+plt.xlabel("Spot Price")
+plt.ylabel("Payoff")
+plt.title("Payoff Short European Call Option")
+plt.axvline(strike, color='red', linestyle='--', lw=1, label="Strike Price")
+plt.legend()
+plt.grid(True)
+plt.show()
