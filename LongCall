@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def payoff(spot, strike):
-    return np.maximum(spot - strike, 0) #if Strike price > Spot Price, payoff = 0
+    return np.maximum(spot - strike, 0) #if Strike price > Spot Price, payoff = 0 // payoff European call : max(S-K,0) (without considering premiums)
 
 spot = np.arange(0, 151, 1) #array of price from 0 to 150 with an interval of 1
 
