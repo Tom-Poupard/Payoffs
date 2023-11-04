@@ -11,11 +11,12 @@ strike = 100 #strike price of the option
 payoff = payoff(spot, strike) #array of payoffs 
 
 plt.figure(figsize=(8, 6))
-plt.plot(spot, payoff, color = "black", label="Payoff")
+plt.plot(spot, payoff, color = "red", label="Payoff")
 plt.xlabel("Spot Price")
 plt.ylabel("Payoff")
 plt.title("Payoff Long Put")
-plt.axvline(strike, color='red', linestyle='--', lw=1, label="Strike Price")
+plt.axvline(strike, color='black', linestyle='--', lw=1, label="Strike Price")
+plt.axhline(0, color='black', lw=1, label="Zero Payoff")
 plt.legend()
 plt.grid(True)
 plt.show()
