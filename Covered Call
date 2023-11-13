@@ -1,0 +1,28 @@
+## PAYOFF COVERED CALL  --> short call + long position in the underlying 
+## We say that we write a covered call
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+def covered_call_payoff(spot, strike, stock_price):
+    call_payoff = -np.maximum(spot - strike, 0)  # Short call option payoff
+    stock_payoff = spot - stock_price  # Stock payoff (you own the stock)
+
+    return stock_payoff + call_payoff
+
+spot = np.arange(0, 151, 1)  # Array of spot prices from 0 to 150 with an interval of 1
+strike = 100  # Strike price of the call option
+stock_price = 105  # Current stock price (you own the stock)
+
+payoff = covered_call_payoff(spot, strike, stock_price)
+
+plt.figure(figsize=(8, 6))
+plt.plot(spot, payoff, color="red", label="Covered Call Payoff")
+plt.xlabel("Spot Price")
+plt.ylabel("Payoff")
+plt.title("Covered Call Payoff")
+plt.axvline(strike, color='black', linestyle='--', lw=1, label="Strike Price")
+plt.axhline(0, color='black', lw=1, label="Zero Payoff")
+plt.legend()
+plt.grid(True)
+plt.show()
