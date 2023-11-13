@@ -1,5 +1,7 @@
-## PAYOFF COVERED CALL  --> short call + long position in the underlying 
+## PAYOFF COVERED CALL  --> short call + long positition of the underlying 
 ## We say that we write a covered call
+## The long position "covers" the short call if there is a rapid increase of the underlying price
+## Anticipations : No increase in the short-term + slight increase in the long run
 
 import matplotlib.pyplot as plt
 import numpy as np
