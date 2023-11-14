@@ -1,14 +1,17 @@
+## PAYOFF EUROPEAN LONG CALL
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-def payoff(spot, strike):
-    return np.maximum(spot - strike, 0) #if Strike price > Spot Price, payoff = 0 // payoff European call : max(S-K,0) (without considering premiums)
+def payoff(spot, strike, premium):
+    return np.maximum(spot - strike - premium, -premium) #if Strike price > Spot Price, payoff = 0
 
 spot = np.arange(0, 151, 1) #array of price from 0 to 150 with an interval of 1
 
-strike = 100 #strike price of the option 
+strike = int(input('enter the strike price : ')) #strike price of the option 
+premium = int(input('enter the premium : ')) #we have to enter a positive value
 
-payoff = payoff(spot, strike) #array of payoffs 
+payoff = payoff(spot, strike, premium) #array of payoffs 
 
 plt.figure(figsize=(8, 6))
 plt.plot(spot, payoff, color = "red", label="Payoff")
