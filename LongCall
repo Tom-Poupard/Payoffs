@@ -1,4 +1,4 @@
-## PAYOFF EUROPEAN LONG CALL
+## PAYOFF EUROPEAN LONG CALL INTRINSIC VALUE
 
 import matplotlib.pyplot as plt
 import numpy as np
