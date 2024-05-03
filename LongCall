@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def payoff(spot, strike, premium):
-    return np.maximum(spot - strike - premium, -premium) #if Strike price > Spot Price, payoff = 0
+    return np.maximum(spot - strike - premium, -premium)
 
 spot = np.arange(0, 151, 1) #array of price from 0 to 150 with an interval of 1
 
-strike = int(input('enter the strike price : ')) #strike price of the option 
-premium = int(input('enter the premium : ')) #we have to enter a positive value
+strike = int(input('enter the strike price : ')) 
+premium = int(input('enter the premium : ')) 
 
 payoff = payoff(spot, strike, premium) #array of payoffs 
 
