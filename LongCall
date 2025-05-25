@@ -11,7 +11,7 @@ spot = np.arange(0, 151, 1) #array of price from 0 to 150 with an interval of 1
 strike = int(input('enter the strike price : ')) 
 premium = int(input('enter the premium : ')) 
 
-payoff = payoff(spot, strike, premium) #array of payoffs 
+payoff = payoff(spot, strike, premium)
 
 plt.figure(figsize=(8, 6))
 plt.plot(spot, payoff, color = "red", label="Payoff")
