@@ -6,9 +6,9 @@ def payoff(spot, strike):
 
 spot = np.arange(0, 151, 1) #array of price from 0 to 150 with an interval of 1
 
-strike = 100 #strike price of the option 
+strike = 100
 
-payoff = payoff(spot, strike) #array of payoffs 
+payoff = payoff(spot, strike)
 
 plt.figure(figsize=(8, 6))
 plt.plot(spot, payoff, color = "red", label="Payoff")
