@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def payoff(spot, strike):
-    return -np.maximum(spot - strike, 0) # "-" --> short position
+    return -np.maximum(spot - strike, 0)
 
 spot = np.arange(0, 151, 1)  
 strike = 100  
