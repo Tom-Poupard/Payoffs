@@ -6,7 +6,6 @@ def payoff(spot, strike):
 
 spot = np.arange(0, 151, 1)  
 strike = 100  
-
 payoff = payoff(spot, strike)  
 
 plt.figure(figsize=(8, 6))
